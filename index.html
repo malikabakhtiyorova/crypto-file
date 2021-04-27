@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Uploading with Multer</title>
+  <title></title>
 
 <style>
     input[type=file], select {
@@ -38,31 +38,11 @@ div {
 
 <div>
 
- <!--  SINGLE FILE -->
 <form action="/uploadfile" enctype="multipart/form-data" method="POST"> 
    <input type="file" name="myFile" />
    <input type="submit" value="Upload a file"/>
 </form>
 
-
-
-<hr>
-
-<!-- MULTIPLE FILES -->
-
-<form action="/uploadmultiple"  enctype="multipart/form-data" method="POST">
-  Select multiple images: <input type="file" name="myFiles" multiple>
-  <input type="submit" value="Upload your photos"/>
-</form>
-
-<hr>
-
-<!--   PHOTO-->
-
-<form action="/uploadphoto" enctype="multipart/form-data" method="POST"> 
-  <input type="file" name="picture" accept="image/*" />
-  <input type="submit" value="Upload an Image"/>
-</form>
 
 
 </div>

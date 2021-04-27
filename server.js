@@ -1,16 +1,10 @@
 const express = require('express')
-const bodyParser= require('body-parser')
 const app = express()
 const multer = require('multer');
 fs = require('fs-extra')
 const {rows,row} = require('./pg');
 var CryptoJS = require("crypto-js");
 app.use(express.urlencoded({extended: true}))
-
-// const MongoClient = require('mongodb').MongoClient
-// ObjectId = require('mongodb').ObjectId
-
-// const myurl = 'mongodb://localhost:27017';
 
 
 var storage = multer.diskStorage({
@@ -24,20 +18,10 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-// MongoClient.connect(myurl, (err, client) => {
-//   if (err) return console.log(err)
-//   db = client.db('test') 
-//   app.listen(3000, () => {
-//     console.log('listening on 3000')
-//   })
-// })
-
 app.get('/',function(req,res){
   res.sendFile(__dirname + '/index.html');
 
 });
-
-// upload single file
 
 app.post('/uploadfile', upload.single('myFile'), async(req, res, next) => {
   const file = req.file
